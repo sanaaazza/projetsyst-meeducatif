@@ -1,4 +1,4 @@
-import phase1.Filiere;
+import Modules.Filiere;
 
 public class Etudiant {
     private String nom;

@@ -1,4 +1,4 @@
-package phase1;
+package Modules;
 
 public class Filiere {
     private String intitulé;

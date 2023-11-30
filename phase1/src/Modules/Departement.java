@@ -1,4 +1,4 @@
-package phase1;
+package Modules;
 
 public class Departement { private String intitulé;
     private  Enseignant responsable;
