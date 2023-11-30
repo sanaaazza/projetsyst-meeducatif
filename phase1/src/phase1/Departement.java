@@ -2,7 +2,7 @@ package phase1;
 
 public class Departement { private String intitulé;
     private  Enseignant responsable;
-    public Département(String intitulé, Enseignant responsable){
+    public Departement(String intitulé, Enseignant responsable){
         this.intitulé=intitulé;
         this.responsable=responsable;
 

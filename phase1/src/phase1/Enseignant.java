@@ -5,8 +5,8 @@ public class Enseignant {
     private String prénom;
     private String email;
     private String grade;
-    Département département;
-    public Enseignant(String nom, String prénom,String email , String grade,Département département){
+    Departement département;
+    public Enseignant(String nom, String prénom,String email , String grade,Departement département){
         this.nom=nom;
         this.prénom=prénom;
         this.email=email;

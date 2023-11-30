@@ -3,8 +3,8 @@ package phase1;
 public class Filiere {
     private String intitulé;
     private Enseignant responsable;
-    private Département département;
-    public Filière(String intitulé,Enseignant responsable , Département département){
+    private Departement département;
+    public Filiere(String intitulé,Enseignant responsable , Departement département){
         this.intitulé=intitulé;
         this.responsable=responsable;
         this.département=département;
@@ -27,7 +27,7 @@ public class Filiere {
                 '}';
     }
 
-    public Département getDépartement() {
+    public Departement getDépartement() {
         return département;
     }
 
@@ -39,7 +39,7 @@ public class Filiere {
         this.responsable = responsable;
     }
 
-    public void setDépartement(Département département) {
+    public void setDépartement(Departement département) {
         this.département = département;
     }
 }

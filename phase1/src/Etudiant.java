@@ -5,7 +5,7 @@ public class Etudiant {
     private String email;
     private int apogée;
     private Filiere filière;
-    public Étudiant(String nom, String email, int apogée , Filiere filière){
+    public Etudiant(String nom, String email, int apogée , Filiere filière){
         this.nom=nom;
         this.email=email;
         this.apogée=apogée;
@@ -36,7 +36,7 @@ public class Etudiant {
         this.apogée = apogée;
     }
 
-    public void setFilière(Filiere filière) {
+    public void setFiliere(Filiere filière) {
         this.filière = filière;
     }
 
