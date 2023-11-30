@@ -1,9 +1,11 @@
+import phase1.Filiere;
+
 public class Etudiant {
     private String nom;
     private String email;
     private int apogée;
-    private Filière filière;
-    public Étudiant(String nom, String email, int apogée , Filière filière){
+    private Filiere filière;
+    public Étudiant(String nom, String email, int apogée , Filiere filière){
         this.nom=nom;
         this.email=email;
         this.apogée=apogée;
@@ -20,7 +22,7 @@ public class Etudiant {
         return apogée;
     }
 
-    public Filière getFilière(){return filière;}
+    public Filiere getFilière(){return filière;}
 
     public void setEmail(String email) {
         this.email = email;
@@ -34,7 +36,7 @@ public class Etudiant {
         this.apogée = apogée;
     }
 
-    public void setFilière(Filière filière) {
+    public void setFilière(Filiere filière) {
         this.filière = filière;
     }
 

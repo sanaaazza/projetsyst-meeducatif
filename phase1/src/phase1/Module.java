@@ -3,7 +3,7 @@ package phase1;
 public class Module {private String intitulé;
     private Filière filière;
     private Enseignant professeur;
-    public Module(String intitulé, Filière filière, Enseignant professeur){
+    public Module(String intitulé, Filiere filière, Enseignant professeur){
         this.intitulé=intitulé;
         this.filière=filière;
         this.professeur=professeur;
@@ -13,7 +13,7 @@ public class Module {private String intitulé;
         return intitulé;
     }
 
-    public Filière getFilière() {
+    public Filiere getFilière() {
         return filière;
     }
 
