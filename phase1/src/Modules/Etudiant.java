@@ -1,4 +1,4 @@
-import Modules.Filiere;
+package Modules;
 
 public class Etudiant {
     private String nom;
