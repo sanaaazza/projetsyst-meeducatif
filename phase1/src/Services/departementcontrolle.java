@@ -2,10 +2,8 @@ package Services;
 
 import java.util.Scanner;
 
-public class MAIN {
-
-    public static void  showMenuprin() {
-        int choix;
+public class departementcontrolle {
+    public static void showMenu(){ int choix;
         Scanner s = new Scanner(System.in);
         do {
             System.out.println("-----------------------Bienvenue-------------------");
@@ -31,29 +29,6 @@ public class MAIN {
 
             }
         } while (choix != 0);}
-    public static int getIntInput(String...msg){
-    Scanner scanner=new Scanner(System.in);
-   String message= ("entrez un nombre");
-    if(msg.length>0)
-        message=msg[0];
-        System.out.println(message);
-        int chiffre=scanner.nextInt();
-        scanner.close();
-        return chiffre;
-    }
-    public static String getStringInput(String...msg){
-       Scanner scanner=new Scanner(System.in);
-       String message=("entrez un texte");
-       if(msg.length>0)
-           message=msg[0];
-       System.out.println(message);
-        String texte=scanner.nextLine();
-        scanner.close();
-        return texte;
-    }
+   }
 
 
-        public static void main (String[]args){
-
-
-    }}
