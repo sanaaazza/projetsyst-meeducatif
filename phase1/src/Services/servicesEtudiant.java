@@ -1,4 +1,4 @@
 package Services;
 
-public class servicesEtudiant {
+public class servicesEtudiant{
 }
