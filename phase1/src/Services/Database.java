@@ -12,10 +12,11 @@ public class Database {
     public static int Id_MD=0;
     public static int Id_FL=0;
     public static int Id_DP=0;
-    public static ArrayList<Etudiant> etudiants=new ArrayList<Etudiant>();
+    public static ArrayList<Etudiant> etudiant=new ArrayList<Etudiant>();
+
     public static  ArrayList<Enseignant> enseignant = new ArrayList<Enseignant>();
-    public static  ArrayList<Filiere> filieres = new ArrayList<Filiere>();
-    public static  ArrayList<Module> modules = new ArrayList<Module>();
+    public static  ArrayList<Filiere> filiere = new ArrayList<Filiere>();
+    public static  ArrayList<Module> module = new ArrayList<Module>();
     public static  ArrayList<Departement> departement = new ArrayList<Departement>();
     public static ArrayList<Note> note= new ArrayList<Note>();
      public static int getId_ET(){

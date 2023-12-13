@@ -12,8 +12,11 @@ public class Departement { private String intitulé;
 
     }
 
+    public Departement() {
+    }
+
     public String getIntitulé() {
-        return intitulé;
+        return this.intitulé;
     }
 
     public Enseignant getResponsable() {

@@ -1,37 +1,15 @@
 package Services;
 
+import Modules.Departement;
+
 import java.util.Scanner;
 
 public class MAIN {
+    public static boolean isNull(Object ob) {
+        return ob == null ;
+    }
 
-    public static void  showMenuprin() {
-        int choix;
-        Scanner s = new Scanner(System.in);
-        do {
-            System.out.println("-----------------------Bienvenue-------------------");
-            System.out.println("1.pour choisir departement");
-            System.out.println("2.pour choisir etudiant");
-            System.out.println("3.pour choisir filiere");
-            System.out.println("4.pour choisir module");
-            System.out.println("5.pour choisir enseignant");
-            choix = s.nextInt();
-            switch (choix) {
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-                default:
-                    System.out.println("veuiller choisir entre 1 et 5 ");
-
-            }
-        } while (choix != 0);}
-    public static int getIntInput(String...msg){
+    public static int getIntInput(String... msg){
     Scanner scanner=new Scanner(System.in);
    String message= ("entrez un nombre");
     if(msg.length>0)
@@ -51,9 +29,31 @@ public class MAIN {
         scanner.close();
         return texte;
     }
+public static void showMenu(){
+        System.out.println("-----------------------Bienvenue-------------------");
+        System.out.println("1.pour choisir departement");
+        System.out.println("2.pour choisir etudiant");
+        System.out.println("3.pour choisir filiere");
+        System.out.println("4.pour choisir module");
+        System.out.println("5.pour choisir enseignant");
+        int choix=getIntInput("Selectionner une option");
+        switch (choix) {
+            case 1:
+              controlle.departementcontrolle.showMenu();
+                break;
+            case 2:controlle.enseignantcontrolle.
+                break;
+            case 3:controlle.filierecontrolle.
+                break;
+            case 4:controlle.modulecontrolle.
+                break;
+            case 5:controlle.etudiantcontrolle.
+                break;
+            default:
+                System.out.println("veuiller choisir entre 1 et 5 ");
+
+        }}
 
 
         public static void main (String[]args){
-
-
     }}

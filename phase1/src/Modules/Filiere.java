@@ -1,6 +1,9 @@
 package Modules;
 
+import java.util.ArrayList;
+
 public class Filiere {
+    private  int id;
     private String intitulé;
     private Enseignant responsable;
     private Departement département;
@@ -9,6 +12,7 @@ public class Filiere {
         this.responsable=responsable;
         this.département=département;
     }
+     public  static ArrayList<Module> module = new ArrayList<Module>();
 
     public String getIntitulé() {
         return intitulé;
@@ -25,6 +29,22 @@ public class Filiere {
                 ", responsable=" + responsable +
                 ", département=" + département +
                 '}';
+    }
+public Filiere(){}
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public static ArrayList<Module> getModules() {
+        return module;
+    }
+
+    public static void setModules(ArrayList<Module> module) {
+        Filiere.module = module;
     }
 
     public Departement getDépartement() {

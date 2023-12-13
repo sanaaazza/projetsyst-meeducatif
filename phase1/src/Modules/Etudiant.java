@@ -1,10 +1,15 @@
 package Modules;
 
+import java.util.ArrayList;
+
 public class Etudiant {
+    private int id ;
     private String nom;
     private String email;
     private int apogée;
     private Filiere filière;
+    public Etudiant(){}
+        public static ArrayList<Note> note= new ArrayList<Note>();
     public Etudiant(String nom, String email, int apogée , Filiere filière){
         this.nom=nom;
         this.email=email;
@@ -49,4 +54,26 @@ public class Etudiant {
                 ", filière=" + filière +
                 '}';
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public static ArrayList<Note> getNote() {
+        return note;
+    }
+
+    public static void setNote(ArrayList<Note> note) {
+        Etudiant.note = note;
+    }
+
+
+    public void setFilière(Filiere filière) {
+        this.filière = filière;
+    }
+
 }
