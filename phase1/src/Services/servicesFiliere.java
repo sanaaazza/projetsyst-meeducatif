@@ -12,7 +12,7 @@ public class servicesFiliere {
         filiere.setIntitulé(intitulé);
         filiere.setResponsable(responsable);
         filiere.setDépartement(département);
-        filiere.setId(Database.getId_ET());
+        filiere.setId(Database.getId_FL());
         Database.filiere.add(filiere);
         return filiere;
     }
