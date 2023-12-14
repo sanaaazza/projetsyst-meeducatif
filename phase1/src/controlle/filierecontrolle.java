@@ -70,7 +70,7 @@ public class filierecontrolle {
         enseignantcontrolle.afficherEns();
         int idES=MAIN.getIntInput("entrer un enseignant par id");
         int idDp=MAIN.getIntInput("enter un departement par id ");
-        Services.servicesFiliere.uppdatFL(intitule,Services.servicesEnseignant.getEnsbyid(idES),Services.servicesDepartement.getDepabyid(idDp));
+        Services.servicesFiliere.uppdatFL(id,intitule,Services.servicesEnseignant.getEnsbyid(idES),Services.servicesDepartement.getDepabyid(idDp));
        afficherFL();
        showMenu();
         }

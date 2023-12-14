@@ -16,7 +16,7 @@ public class servicesFiliere {
         Database.filiere.add(filiere);
         return filiere;
     }
-    public static Filiere uppdatFL( String intitulé, Enseignant responsable , Departement département){
+    public static Filiere uppdatFL( int id,String intitulé, Enseignant responsable , Departement département){
         for (Filiere filiere:Database.filiere){
             if(filiere.getId()==id){
                 filiere.setIntitulé(intitulé);
