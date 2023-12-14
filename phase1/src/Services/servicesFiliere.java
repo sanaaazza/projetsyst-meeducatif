@@ -16,7 +16,7 @@ public class servicesFiliere {
         Database.filiere.add(filiere);
         return filiere;
     }
-    public static Filiere uppdatFL(int id,String intitulé,Enseignant responsable , Departement département){
+    public static Filiere uppdatFL( String intitulé, Enseignant responsable , Departement département){
         for (Filiere filiere:Database.filiere){
             if(filiere.getId()==id){
                 filiere.setIntitulé(intitulé);
@@ -25,15 +25,15 @@ public class servicesFiliere {
             }return filiere;
         }return new Filiere();
     }
-    public static Filiere getETbyid(int id){
+    public static Filiere getFLbyid(int id){
         for (Filiere filiere: Database.filiere){
             if(filiere.getId()==id){return filiere;}
     } return new Filiere();}
-    public static ArrayList<Filiere>  delleteETbyid(int id){
-        Database.filiere.remove(getETbyid(id));
+    public static ArrayList<Filiere>  delleteFLbyid(int id){
+        Database.filiere.remove(getFLbyid(id));
         return Database.filiere;
     }
-    public static ArrayList<Filiere> getAllET(){
+    public static ArrayList<Filiere> getAllFL(){
         return Database.filiere;
     }
 }

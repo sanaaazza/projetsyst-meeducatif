@@ -41,13 +41,13 @@ public static void showMenu(){
             case 1:
               controlle.departementcontrolle.showMenu();
                 break;
-            case 2:controlle.enseignantcontrolle.
+            case 2:controlle.enseignantcontrolle.showMenu();
                 break;
-            case 3:controlle.filierecontrolle.
+            case 3:controlle.filierecontrolle.showMenu();
                 break;
-            case 4:controlle.modulecontrolle.
+            case 4:controlle.modulecontrolle.showMenu();
                 break;
-            case 5:controlle.etudiantcontrolle.
+            case 5:controlle.etudiantcontrolle.showMenu();
                 break;
             default:
                 System.out.println("veuiller choisir entre 1 et 5 ");
