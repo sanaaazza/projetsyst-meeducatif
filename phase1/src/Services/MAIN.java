@@ -1,6 +1,7 @@
 package Services;
 
 import Modules.Departement;
+import Modules.Module;
 
 import java.util.Scanner;
 
@@ -56,4 +57,13 @@ public static void showMenu(){
 
 
         public static void main (String[]args){
+            Modules.Enseignant enseignant = new Modules.Enseignant();
+            enseignant.setNom("Ali");
+            enseignant.setPrénom("Benani");
+            enseignant.setEmail("alibenani2@gmail.com");
+            enseignant.setGrade("PES");
+            enseignant.setId(Database.getId_ES());
+            Database.enseignant.add(enseignant);
+            showMenu();
+        }
     }}
