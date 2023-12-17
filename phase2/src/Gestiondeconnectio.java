@@ -10,5 +10,7 @@ public class Gestiondeconnectio {
          System.out.println("Good connection");
         }catch(SQLException e) {
             System.out.println("Bad connection");
+
         }}}
+
 
