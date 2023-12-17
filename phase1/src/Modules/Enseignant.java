@@ -19,7 +19,6 @@ public class Enseignant {
         this.département=département;
     }
      public Enseignant(){
-
      }
     public static ArrayList<Enseignant> getEnseignant() {
         return enseignant;
@@ -95,13 +94,9 @@ public class Enseignant {
         if (obj == null) {
             return false;
         }
-
-
-
         if (obj.getId()!= this.id) {
             return false;
         }
-
         return true;
     }
 }

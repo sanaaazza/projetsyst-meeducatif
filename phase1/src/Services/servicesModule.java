@@ -6,7 +6,10 @@ import Modules.Module;
 
 import java.util.ArrayList;
 
+import static Services.Database.module;
+
 public class servicesModule {
+
     public static Module addMD(String intitulé, Filiere filière, Enseignant professeur){
         Module module=new Module();
         module.setIntitulé(intitulé);
@@ -17,7 +20,7 @@ public class servicesModule {
         return module;
     }
     public static Module uppdateMD( int id,String intitulé, Filiere filière, Enseignant professeur){
-        for (Module module: Database.module){
+        for (Module module: module){
             if (module.getId()==id){
                 module.setIntitulé(intitulé);
                 module.setFilière(filière);
@@ -26,18 +29,22 @@ public class servicesModule {
         }return new Module();
     }
     public static Module getMDbyid(int id){
-        for(Module module: Database.module){
+        for(Module module: module){
             if(module.getId()==id){return module;
         }
     }return new Module();
 }
 public static ArrayList<Module> deleteMDbyid(int id){
-        Database.module.remove(getMDbyid(id));
-        return Database.module;
+        module.remove(getMDbyid(id));
+        return module;
 }
 public static ArrayList<Module> getAllMD(){
-        return Database.module;
+        return module;
 }
-
-
+public  static int siezofmodule(){
+        if(module!=null){
+            return module.size();
+        }
+        else return 0;
+}
 }

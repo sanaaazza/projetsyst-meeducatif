@@ -55,9 +55,13 @@ public class enseignantcontrolle {
         String Email = MAIN.getStringInput("Entrez l'email :");
         departementcontrolle.afficherDepa();
         int id = MAIN.getIntInput("Sélecionnez un departement  par id :");
-        Services.servicesEnseignant.addEns(nom,prenom,grade,Email,Services.servicesDepartement.getDepabyid(id));
-
-       afficherEns();
+        Departement departement=Services.servicesDepartement.getDepabyid(id);
+        if(departement==null){System.out.println(" departement n'existe pas");
+        showMenu(); return;}
+       if( Services.servicesEnseignant.addEns(nom, prenom, grade, Email, Services.servicesDepartement.getDepabyid(id))!=null){
+        System.out.println("L'ajout enseignant avec succés");
+        afficherEns();}
+        else{ System.out.println("echec d'ajout");}
         showMenu();
     }
     public static void editEns(){

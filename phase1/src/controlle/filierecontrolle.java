@@ -1,5 +1,6 @@
 package controlle;
 
+import Modules.Departement;
 import Modules.Enseignant;
 import Modules.Filiere;
 import Services.Database;
@@ -58,8 +59,14 @@ public class filierecontrolle {
        enseignantcontrolle.afficherEns();
        int id1= MAIN.getIntInput("enter un departement par id ");
        int id2= MAIN.getIntInput("enter un enseignant  par id ");
-       Services.servicesFiliere.addFL(intitulé,Services.servicesEnseignant.getEnsbyid(id2),Services.servicesDepartement.getDepabyid(id1));
-    afficherFL();
+       Enseignant enseignant=Services.servicesEnseignant.getEnsbyid(id2);
+        Departement departement=Services.servicesDepartement.getDepabyid(id1);
+       if(!enseignant.equals(enseignant) && departement==null){System.out.println(" enseignant et departement n'existent pas");
+            showMenu(); return;}
+      if(Services.servicesModule.siezofmodule()>=12 && enseignant.equals(enseignant))
+      {Services.servicesFiliere.addFL(intitulé,Services.servicesEnseignant.getEnsbyid(id2),Services.servicesDepartement.getDepabyid(id1));
+          System.out.println("ajout avec succés"); afficherFL();}
+    else System.out.println("Impossible d'ajouter la filière. Assurez-vous que la filière a au moins 12 modules et est gérée par un enseignant.");
     showMenu();
     }
     public static void editFL(){

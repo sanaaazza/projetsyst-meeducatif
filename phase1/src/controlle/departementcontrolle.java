@@ -47,9 +47,12 @@ public class departementcontrolle {
         String intitule = MAIN.getStringInput("Entrez l'intitulé :");
         enseignantcontrolle.afficherEns();
         int id = MAIN.getIntInput("Sélecionnez un enseignant par id :");
-       Services.servicesDepartement.addDepa(intitule, Services.servicesEnseignant.getEnsbyid(id));
-
-        afficherDepa();
+        Enseignant enseignant=Services.servicesEnseignant.getEnsbyid(id);
+        if(!enseignant.equals(enseignant)){System.out.println("enseignant n'existe pas ");
+            showMenu(); return;}
+        if(enseignant.equals(enseignant)){Services.servicesDepartement.addDepa(intitule, Services.servicesEnseignant.getEnsbyid(id)); System.out.println("ajout avec succes");
+        afficherDepa();}
+        else{System.out.println("Echec d'ajout");}
         showMenu();
     }
     public static void editDepa(){
