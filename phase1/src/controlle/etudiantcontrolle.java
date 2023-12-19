@@ -50,6 +50,7 @@ public class etudiantcontrolle {
         String Email=MAIN.getStringInput("entrer un email");
         String filiere=MAIN.getStringInput("entrer un filiere");
         int note=MAIN.getIntInput("enter une note");
+
         filierecontrolle.afficherFL();
         int id=MAIN.getIntInput("entrer id pour une filiere");
         Services.servicesEtudiant.addET(nom,Email,apoge,Services.servicesFiliere.getFLbyid(id));

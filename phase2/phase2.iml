@@ -10,5 +10,7 @@
     <orderEntry type="library" name="mysql-connector-c++-8.0.28-winx64-debug1" level="project" />
     <orderEntry type="library" name="MySqlJdbcDriver" level="project" />
     <orderEntry type="library" name="MySqlJdbcDriver1" level="project" />
+    <orderEntry type="library" name="mysql-connector-c++-8.0.28-winx64-debug2" level="project" />
+    <orderEntry type="module" module-name="phase1" />
   </component>
 </module>

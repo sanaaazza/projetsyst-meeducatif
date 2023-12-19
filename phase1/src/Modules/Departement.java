@@ -2,8 +2,7 @@ package Modules;
 
 import java.util.ArrayList;
 
-public class Departement {
-    private String intitulé;
+public class Departement { private String intitulé;
     private  Enseignant responsable;
     private ArrayList<Filiere> filieres = new ArrayList<Filiere>();
      private int id;
