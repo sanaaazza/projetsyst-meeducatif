@@ -1,11 +1,7 @@
 package controlle;
 import Modules.Etudiant;
-import Modules.Filiere;
-import Modules.Note;
 import Services.Database;
 import Services.MAIN;
-
-import java.security.PublicKey;
 
 public class etudiantcontrolle {
     public static void showMenu() {
@@ -53,7 +49,7 @@ public class etudiantcontrolle {
 
         filierecontrolle.afficherFL();
         int id=MAIN.getIntInput("entrer id pour une filiere");
-        Services.servicesEtudiant.addET(nom,Email,apoge,Services.servicesFiliere.getFLbyid(id));
+        Services.servicesEtudiant.addET(nom,Email,apoge, Services.servicesFiliere.getFLbyid(id));
       afficherET();
       showMenu();
     }
@@ -66,7 +62,7 @@ public class etudiantcontrolle {
         String filiere=MAIN.getStringInput("entrer un filiere");
         filierecontrolle.afficherFL();
         int idFL=MAIN.getIntInput("entrer un id pour une filiere");
-       Services.servicesEtudiant.uppdateET(id,nom,Email,apoge,Services.servicesFiliere.getFLbyid(idFL));
+       Services.servicesEtudiant.uppdateET(id,nom,Email,apoge, Services.servicesFiliere.getFLbyid(idFL));
        afficherET();
        showMenu();
         }
@@ -74,6 +70,7 @@ public class etudiantcontrolle {
      afficherET();
         int id = MAIN.getIntInput("Sélecionnez une filiere par id :");
         Services.servicesFiliere.delleteFLbyid(id);
+        System.out.println("suppression avec succès");
         afficherET();
 
     }

@@ -2,8 +2,8 @@ package Modules;
 
 import java.util.ArrayList;
 
-public class Departement { private String intitulé;
-    private  Enseignant responsable;
+public class Departement { private static String intitulé;
+    private static Enseignant responsable;
     private ArrayList<Filiere> filieres = new ArrayList<Filiere>();
      private int id;
     public Departement(String intitulé, Enseignant responsable){
@@ -15,12 +15,20 @@ public class Departement { private String intitulé;
     public Departement() {
     }
 
+    public Departement(int id, String intitulé, String enseignant) {
+        this.id=id;
+        this.intitulé=intitulé;
+        this.responsable=responsable;
+    }
+
+
+
     public String getIntitulé() {
         return this.intitulé;
     }
 
     public Enseignant getResponsable() {
-        return responsable;
+        return this.responsable;
     }
 
     public void setResponsable(Enseignant responsable) {
@@ -47,11 +55,12 @@ public class Departement { private String intitulé;
         this.id = id;
     }
 
-    @Override
     public String toString() {
         return "Département{" +
+                "id = " + id + '\''+
                 "intitulé='" + intitulé + '\'' +
-                ", responsable=" + responsable +
+                ", responsable=" + responsable.getId() +
+
                 '}';
     }
 

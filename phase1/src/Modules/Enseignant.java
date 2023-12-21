@@ -20,6 +20,18 @@ public class Enseignant {
     }
      public Enseignant(){
      }
+
+    public Enseignant(int idens, String nom, String prenom, String email, String grade) {
+        this.nom=nom;
+        this.prénom=prenom;
+        this.email=email;
+        this.grade=grade;
+    }
+
+    public Enseignant(String benani, String ali, String mail, String chef) {
+    }
+
+
     public static ArrayList<Enseignant> getEnseignant() {
         return enseignant;
     }
@@ -87,7 +99,7 @@ public class Enseignant {
                 ", prénom='" + prénom + '\'' +
                 ", email='" + email + '\'' +
                 ", grade='" + grade + '\'' +
-                ", département=" + département +
+
                 '}';
     }
     public boolean equals(Enseignant obj) {
@@ -99,5 +111,7 @@ public class Enseignant {
         }
         return true;
     }
+
+
 }
 

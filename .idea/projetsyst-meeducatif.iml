@@ -5,6 +5,6 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="mysql-connector-c++-8.0.28-winx64-debug" level="project" />
+    <orderEntry type="library" name="mysql-connector-j-8.1.01" level="project" />
   </component>
 </module>

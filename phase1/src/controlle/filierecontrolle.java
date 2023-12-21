@@ -5,15 +5,93 @@ import Modules.Enseignant;
 import Modules.Filiere;
 import Services.Database;
 import Services.MAIN;
-import com.sun.tools.javac.Main;
 
-import java.beans.beancontext.BeanContextServices;
-import java.security.Provider;
+public class
 
-import static Services.Database.enseignant;
-import static Services.Database.getId_ES;
 
-public class filierecontrolle {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+filierecontrolle {
     public static void showMenu() {
 
     System.out.println("-----------------------Filiere-------------------");
@@ -59,12 +137,13 @@ public class filierecontrolle {
        enseignantcontrolle.afficherEns();
        int id1= MAIN.getIntInput("enter un departement par id ");
        int id2= MAIN.getIntInput("enter un enseignant  par id ");
-       Enseignant enseignant=Services.servicesEnseignant.getEnsbyid(id2);
-        Departement departement=Services.servicesDepartement.getDepabyid(id1);
+       Enseignant enseignant= Services.servicesEnseignant.getEnsbyid(id2);
+        Departement departement= Services.servicesDepartement.getDepabyid(id1);
        if(!enseignant.equals(enseignant) && departement==null){System.out.println(" enseignant et departement n'existent pas");
             showMenu(); return;}
       if(Services.servicesModule.siezofmodule()>=12 && enseignant.equals(enseignant))
-      {Services.servicesFiliere.addFL(intitulé,Services.servicesEnseignant.getEnsbyid(id2),Services.servicesDepartement.getDepabyid(id1));
+      {
+          Services.servicesFiliere.addFL(intitulé, Services.servicesEnseignant.getEnsbyid(id2), Services.servicesDepartement.getDepabyid(id1));
           System.out.println("ajout avec succés"); afficherFL();}
     else System.out.println("Impossible d'ajouter la filière. Assurez-vous que la filière a au moins 12 modules et est gérée par un enseignant.");
     showMenu();
@@ -77,7 +156,7 @@ public class filierecontrolle {
         enseignantcontrolle.afficherEns();
         int idES=MAIN.getIntInput("entrer un enseignant par id");
         int idDp=MAIN.getIntInput("enter un departement par id ");
-        Services.servicesFiliere.uppdatFL(id,intitule,Services.servicesEnseignant.getEnsbyid(idES),Services.servicesDepartement.getDepabyid(idDp));
+        Services.servicesFiliere.uppdatFL(id,intitule, Services.servicesEnseignant.getEnsbyid(idES), Services.servicesDepartement.getDepabyid(idDp));
        afficherFL();
        showMenu();
         }
@@ -85,6 +164,7 @@ public class filierecontrolle {
         afficherFL();
         int id=MAIN.getIntInput("enter un id ");
             Services.servicesFiliere.delleteFLbyid(id);
+            System.out.println("suppression avec succès");
             afficherFL();
         }
     }

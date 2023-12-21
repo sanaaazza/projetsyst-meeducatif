@@ -5,10 +5,6 @@ import Modules.Enseignant;
 import Services.Database;
 import Services.MAIN;
 
-import java.net.SocketTimeoutException;
-import java.security.Provider;
-import java.util.Scanner;
-
 public class departementcontrolle {
     public static void showMenu() {
 
@@ -20,7 +16,7 @@ public class departementcontrolle {
         System.out.println("5.retourner un au menu principale");
         int choix= Services.MAIN.getIntInput("Veuillez choisir une option");
         switch (choix) {
-            case 1:afficherDepa();
+            case 1:ajouterDepa();
                 break;
             case 2:destroyDepartement();
                 break;
@@ -40,19 +36,21 @@ public class departementcontrolle {
             System.out.println("ID : "+departement.getId());
             System.out.println("Intitulé : "+departement.getIntitulé());
             if(!MAIN.isNull(departement.getResponsable())){
-                System.out.println(" responsable :  "+departement.getResponsable().getNom()+" "+departement.getResponsable().getPrénom());
+                System.out.println("responsable :  "+ departement.getResponsable().getNom() +" "+ departement.getResponsable().getPrénom());
             }
             System.out.println("  ");}}
     public static void ajouterDepa(){
         String intitule = MAIN.getStringInput("Entrez l'intitulé :");
         enseignantcontrolle.afficherEns();
         int id = MAIN.getIntInput("Sélecionnez un enseignant par id :");
-        Enseignant enseignant=Services.servicesEnseignant.getEnsbyid(id);
-        if(!enseignant.equals(enseignant)){System.out.println("enseignant n'existe pas ");
+        Enseignant enseignant= Services.servicesEnseignant.getEnsbyid(id);
+if(!enseignant.equals(enseignant)){System.out.println("enseignant n'existe pas ");
             showMenu(); return;}
-        if(enseignant.equals(enseignant)){Services.servicesDepartement.addDepa(intitule, Services.servicesEnseignant.getEnsbyid(id)); System.out.println("ajout avec succes");
+       if(enseignant.equals(enseignant)){
+            Services.servicesDepartement.addDepa(intitule, Services.servicesEnseignant.getEnsbyid(id));
+            System.out.println("ajout avec succes");
         afficherDepa();}
-        else{System.out.println("Echec d'ajout");}
+      else {System.out.println("Echec d'ajout");}
         showMenu();
     }
     public static void editDepa(){
@@ -71,6 +69,7 @@ public class departementcontrolle {
       afficherDepa();
         int id = MAIN.getIntInput("Sélecionnez un departement par id :");
         Services.servicesDepartement.deleteDepabyid(id);
+        System.out.println("suppression avec succès");
         afficherDepa();
 
     }

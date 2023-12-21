@@ -52,7 +52,7 @@ public class modulecontrolle {
         enseignantcontrolle.afficherEns();
         int id1=MAIN.getIntInput("entrer une filiere par un id");
         int id2=MAIN.getIntInput("entrer un enseignant par id");
-        Services.servicesModule.addMD(intitule,Services.servicesFiliere.getFLbyid(id1),Services.servicesEnseignant.getEnsbyid(id2));
+        Services.servicesModule.addMD(intitule, Services.servicesFiliere.getFLbyid(id1), Services.servicesEnseignant.getEnsbyid(id2));
     afficherMD();
     showMenu();
     }
@@ -64,7 +64,7 @@ public class modulecontrolle {
         enseignantcontrolle.afficherEns();
         int idES=MAIN.getIntInput("entrer un enseignant par id");
         int idFl=MAIN.getIntInput("enter un departement par id ");
-        Services.servicesModule.uppdateMD(id,intitule,Services.servicesFiliere.getFLbyid(idFl),Services.servicesEnseignant.getEnsbyid(idFl));
+        Services.servicesModule.uppdateMD(id,intitule, Services.servicesFiliere.getFLbyid(idFl), Services.servicesEnseignant.getEnsbyid(idFl));
         afficherMD();
         showMenu();
     }
@@ -72,6 +72,7 @@ public class modulecontrolle {
         afficherMD();
         int id=MAIN.getIntInput("enter un id ");
         Services.servicesModule.getMDbyid(id);
+        System.out.println("suppression avec succès");
         afficherMD();
     }
 }

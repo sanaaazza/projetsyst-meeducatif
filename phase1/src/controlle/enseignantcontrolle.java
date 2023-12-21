@@ -2,13 +2,12 @@ package controlle;
 
 import Modules.Departement;
 import Modules.Enseignant;
-import Services.Database;
 import Services.MAIN;
 
-import static Services.Database.departement;
 import static Services.Database.enseignant;
 
 public class enseignantcontrolle {
+
     public static void showMenu() {
 
         System.out.println("-----------------------Enseignant-------------------");
@@ -19,13 +18,17 @@ public class enseignantcontrolle {
         System.out.println("5.retourner un au menu principale");
         int choix= Services.MAIN.getIntInput("Veuillez choisir une option");
         switch (choix) {
-            case 1:afficherEns();
+            case 1:
+                ajouterEns();
                 break;
-            case 2:destroyEnseignant();
+            case 2:
+                destroyEnseignant();
                 break;
-            case 3:editEns();
+            case 3:
+                editEns();
                 break;
-            case 4:afficherEns();
+            case 4:
+                afficherEns();
                 break;
             case 5:
                 MAIN.showMenu();
@@ -33,8 +36,8 @@ public class enseignantcontrolle {
             default:
                 System.out.println("veuiller choisir entre 1 et 5 ");
 
-        }
-    }
+        }}
+
     public static void afficherEns(){
         for(Enseignant enseignant: enseignant){
             System.out.println("ID : "+enseignant.getId());
@@ -45,7 +48,7 @@ public class enseignantcontrolle {
             System.out.println("Département : "+enseignant.getDépartement());
 
             if(!MAIN.isNull(enseignant.getDépartement())){
-                System.out.println(" Département :  "+enseignant.getDépartement().getIntitulé()+" et "+enseignant.getDépartement().getResponsable());
+                System.out.println("Enseignant :  "+enseignant.getDépartement().getIntitulé()+" et "+enseignant.getDépartement().getResponsable());
             }
             System.out.println("  ");}}
     public static void ajouterEns(){
@@ -55,7 +58,7 @@ public class enseignantcontrolle {
         String Email = MAIN.getStringInput("Entrez l'email :");
         departementcontrolle.afficherDepa();
         int id = MAIN.getIntInput("Sélecionnez un departement  par id :");
-        Departement departement=Services.servicesDepartement.getDepabyid(id);
+        Departement departement= Services.servicesDepartement.getDepabyid(id);
         if(departement==null){System.out.println(" departement n'existe pas");
         showMenu(); return;}
        if( Services.servicesEnseignant.addEns(nom, prenom, grade, Email, Services.servicesDepartement.getDepabyid(id))!=null){
@@ -73,7 +76,7 @@ public class enseignantcontrolle {
         String Email = MAIN.getStringInput("Entrez l'email :");
         departementcontrolle.ajouterDepa();
         int idDepa = MAIN.getIntInput("Sélecionnez un departement par id :");
-        Services.servicesEnseignant.updateEns(id,nom,prenom,Email,grade,Services.servicesDepartement.getDepabyid(idDepa));
+        Services.servicesEnseignant.updateEns(id,nom,prenom,Email,grade, Services.servicesDepartement.getDepabyid(idDepa));
         afficherEns();
         showMenu();
     }
@@ -81,6 +84,7 @@ public class enseignantcontrolle {
         afficherEns();
         int id = MAIN.getIntInput("Sélecionnez un enseignant par id :");
         Services.servicesEnseignant.deleteEnsbyid(id);
+        System.out.println("suppression avec succès");
        afficherEns();
     }
 }

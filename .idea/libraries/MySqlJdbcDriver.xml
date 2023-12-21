@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="MySqlJdbcDriver">
-    <CLASSES>
-      <root url="jar://$USER_HOME$/Downloads/MySqlJdbcDriver.zip!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
