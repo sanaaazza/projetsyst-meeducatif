@@ -1,5 +1,6 @@
 package Modules;
 
+import java.sql.Connection;
 import java.util.ArrayList;
 
 public class Departement { private static String intitulé;
@@ -21,6 +22,10 @@ public class Departement { private static String intitulé;
         this.responsable=responsable;
     }
 
+
+
+    public Departement(int id, String gegm, Enseignant enseignant) {
+    }
 
 
     public String getIntitulé() {

@@ -63,18 +63,25 @@ public class MAIN {
         }
 
         public static void main(String[] args) {
-           Modules.Enseignant enseignant=new Enseignant();
-            enseignant.setId(1);
+
+            Departement departement=new Departement();
+            departement.setId(Database.getId_DP());
+            departement.setIntitulé("departement informatique");
+            departement.setResponsable(new Enseignant(2,"dachri","wafaa","wafaadachri20@gmail.com","chef"));
+            Database.departement.add(departement);
+            Enseignant enseignant=new Enseignant();
+            enseignant.setId(Database.getId_ES());
             enseignant.setNom("Ali");
             enseignant.setPrénom("benani");
             enseignant.setEmail("alibenani20@gmail.com");
-            enseignant.setGrade("chef");
+            enseignant.setGrade("prof");
             Database.enseignant.add(enseignant);
-            Modules.Departement departement=new Modules.Departement();
-            departement.setId(1);
-            departement.setResponsable(new Enseignant("benani","ali","alibenani20@gmail.com","chef"));
-            departement.setIntitulé("departement informatique");
-            Database.departement.add(departement);
+
+              /* Departement dep=new Departement();
+            dep.setId(Database.getId_DP());
+            dep.setIntitulé("departement mecanique");
+            dep.setResponsable(new Enseignant(2,"tahiri","liela","wafaadachri20@gmail.com","prof"));
+            Database.departement.add(dep);*/
             showMenu();
         }
     }

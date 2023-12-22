@@ -45,12 +45,12 @@ public class enseignantcontrolle {
             System.out.println("Nom : "+enseignant.getNom());
             System.out.println("Email : "+enseignant.getEmail());
             System.out.println("Grade : "+enseignant.getGrade());
-            System.out.println("Département : "+enseignant.getDépartement());
+            // System.out.println("Département : "+enseignant.getDépartement());
 
-            if(!MAIN.isNull(enseignant.getDépartement())){
-                System.out.println("Enseignant :  "+enseignant.getDépartement().getIntitulé()+" et "+enseignant.getDépartement().getResponsable());
+          // if(!MAIN.isNull(enseignant.getDépartement())){
+             //System.out.println("Enseignant :  "+enseignant.getDépartement().getIntitulé()+" et "+enseignant.getDépartement().getResponsable());
             }
-            System.out.println("  ");}}
+            System.out.println("  ");}
     public static void ajouterEns(){
         String nom = MAIN.getStringInput("Entrez le nom :");
         String prenom = MAIN.getStringInput("Entrez le  prenom :");
@@ -60,13 +60,14 @@ public class enseignantcontrolle {
         int id = MAIN.getIntInput("Sélecionnez un departement  par id :");
         Departement departement= Services.servicesDepartement.getDepabyid(id);
         if(departement==null){System.out.println(" departement n'existe pas");
-        showMenu(); return;}
-       if( Services.servicesEnseignant.addEns(nom, prenom, grade, Email, Services.servicesDepartement.getDepabyid(id))!=null){
+       showMenu(); return;}
+        Services.servicesEnseignant.addEns(nom, prenom, grade, Email, Services.servicesDepartement.getDepabyid(id));
         System.out.println("L'ajout enseignant avec succés");
-        afficherEns();}
-        else{ System.out.println("echec d'ajout");}
+        afficherEns();
         showMenu();
+
     }
+
     public static void editEns(){
        afficherEns();
         int id = MAIN.getIntInput("Sélecionnez un enseignant par id :");

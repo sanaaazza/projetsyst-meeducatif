@@ -9,6 +9,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 import static Services.Database.Id_DP;
+import static Services.Database.getId_ES;
 
 public class Gestiondeconnectio {
 
@@ -20,17 +21,19 @@ public class Gestiondeconnectio {
 
 createTable(cx);
 createTableEn(cx);
-
+            //int idEnseignantToDelete = 1; // Remplacez cela par l'ID réel que vous souhaitez supprimer
+          //  deleteenseignant(idEnseignantToDelete, cx);
 
            ArrayList<Enseignant> enseignants = selectenseignat(cx);
 
             for (Enseignant enseignant : enseignants) {
                 System.out.println(enseignant.toString());
             }
-           /* ArrayList<Departement> departement=selectdepartement(cx);
+          ArrayList<Departement> departement=selectdepartement(cx);
             for(Departement depart:departement){
-                System.out.println(depart.toString());}*/
-
+                System.out.println(depart.toString());}
+insertEnse(new Enseignant(2,"ali","benani","alibenani@gmail.com","chef"),cx);
+           insertDepar(new Departement(2,"gegm",new Enseignant(2,"benai","ali","benaiali@gmail.com","chef")),cx);
         } catch (SQLException e) {
             System.out.println("Bad connection");
 
@@ -81,6 +84,7 @@ createTableEn(cx);
             stmt.setInt(3, depart.getResponsable().getId());
             stmt.executeUpdate();
             Database.departement.add(depart);
+            System.out.println("ajout avec succès");
         }
     }
 

@@ -28,7 +28,9 @@ public class Enseignant {
         this.grade=grade;
     }
 
-    public Enseignant(String benani, String ali, String mail, String chef) {
+
+
+    public Enseignant(int idEs){
     }
 
 

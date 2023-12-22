@@ -31,28 +31,29 @@ public class departementcontrolle {
 
         }
     }
-    public static void afficherDepa(){
-        for(Departement departement: Database.departement){
-            System.out.println("ID : "+departement.getId());
-            System.out.println("Intitulé : "+departement.getIntitulé());
-            if(!MAIN.isNull(departement.getResponsable())){
-                System.out.println("responsable :  "+ departement.getResponsable().getNom() +" "+ departement.getResponsable().getPrénom());
-            }
-            System.out.println("  ");}}
     public static void ajouterDepa(){
         String intitule = MAIN.getStringInput("Entrez l'intitulé :");
         enseignantcontrolle.afficherEns();
         int id = MAIN.getIntInput("Sélecionnez un enseignant par id :");
-        Enseignant enseignant= Services.servicesEnseignant.getEnsbyid(id);
-if(!enseignant.equals(enseignant)){System.out.println("enseignant n'existe pas ");
-            showMenu(); return;}
-       if(enseignant.equals(enseignant)){
+       /* Enseignant enseignant= Services.servicesEnseignant.getEnsbyid(id);
+if(!enseignant.equals(benignant)){System.out.println("enseignant n'existe pas ");
+            showMenu(); return;}*/
+       /*if(enseignant.equals(enseignant)){*/
             Services.servicesDepartement.addDepa(intitule, Services.servicesEnseignant.getEnsbyid(id));
             System.out.println("ajout avec succes");
-        afficherDepa();}
-      else {System.out.println("Echec d'ajout");}
-        showMenu();
-    }
+
+        showMenu();}
+    public static void afficherDepa(){
+        for(Departement depart: Database.departement){
+            System.out.println("ID : "+depart.getId());
+            System.out.println("Intitulé : "+depart.getIntitulé());
+           if(!MAIN.isNull(depart.getResponsable())){
+                System.out.println("responsable :  "+ depart.getResponsable().getNom() +" "+ depart.getResponsable().getPrénom());
+            }
+            System.out.println("  ");}}
+    /* else {System.out.println("Echec d'ajout");}*/
+        /*showMenu();*/
+   /* }*/
     public static void editDepa(){
       afficherDepa();
         int id = MAIN.getIntInput("Sélecionnez un departement par id :");
