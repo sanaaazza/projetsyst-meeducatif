@@ -2,14 +2,8 @@ import Modules.Departement;
 import Modules.Enseignant;
 import Services.Database;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.sql.*;
 import java.util.ArrayList;
-
-import static Services.Database.Id_DP;
-import static Services.Database.getId_ES;
 
 public class Gestiondeconnectio {
 
@@ -21,19 +15,26 @@ public class Gestiondeconnectio {
 
 createTable(cx);
 createTableEn(cx);
-            //int idEnseignantToDelete = 1; // Remplacez cela par l'ID réel que vous souhaitez supprimer
-          //  deleteenseignant(idEnseignantToDelete, cx);
 
-           ArrayList<Enseignant> enseignants = selectenseignat(cx);
+deleteenseignant(12, cx);
+deleteenseignant(1,cx);
+Departement departToUpdate = new Departement(1, "jami ",new Enseignant(3,"Ali","Benani","aliben08@gmail.com","Prof"));
+updateDepartement(departToUpdate, cx);
 
-            for (Enseignant enseignant : enseignants) {
+Enseignant enseignantToUpdate = new Enseignant(2, "Nouveau Nom", "Nouveau Prénom", "newemail@example.com", "Autre Grade");
+updateEnseignant(enseignantToUpdate, cx);
+
+ArrayList<Enseignant> enseignants = selectenseignat(cx);
+
+for (Enseignant enseignant : enseignants) {
                 System.out.println(enseignant.toString());
             }
-          ArrayList<Departement> departement=selectdepartement(cx);
+ ArrayList<Departement> departement=selectdepartement(cx);
             for(Departement depart:departement){
                 System.out.println(depart.toString());}
-insertEnse(new Enseignant(2,"ali","benani","alibenani@gmail.com","chef"),cx);
-           insertDepar(new Departement(2,"gegm",new Enseignant(2,"benai","ali","benaiali@gmail.com","chef")),cx);
+//insertEnse(new Enseignant(2,"wafaa","dachri","wafaadachrii@gmail.com","chef"),cx);
+ //insertDepar(new Departement(2,"gegm",new Enseignant(2,"benai","ali","benaiali@gmail.com","prof")),cx);
+
         } catch (SQLException e) {
             System.out.println("Bad connection");
 
@@ -42,10 +43,6 @@ insertEnse(new Enseignant(2,"ali","benani","alibenani@gmail.com","chef"),cx);
         }
 
     }
-
-
-
-
     public static void createTable(Connection cx) throws SQLException {
         String req = "CREATE TABLE IF NOT EXISTS Departement (\n" +
                 "iddep INT AUTO_INCREMENT PRIMARY KEY, \n" +
@@ -136,18 +133,46 @@ insertEnse(new Enseignant(2,"ali","benani","alibenani@gmail.com","chef"),cx);
         return enseignants;
     }
     public static void deletedepartement(int id, Connection cx) throws SQLException {
-        String query = "DELETE  FROM Departement where id = ?";
+        String query = "DELETE  FROM Departement where iddep = ?";
         PreparedStatement ps = cx.prepareStatement(query);
         ps.setInt(1, id);
         ps.executeUpdate();
+        System.out.println("suppression avec succès");
     }
     public static void deleteenseignant(int id, Connection cx) throws SQLException {
-        String query = "DELETE  FROM Enseignant where id = ?";
+        String query = "DELETE  FROM Enseignant where idens = ?";
         PreparedStatement ps = cx.prepareStatement(query);
         ps.setInt(1, id);
         ps.executeUpdate();
+        System.out.println("suppression avec succès");
+    }
+    public static void updateDepartement(Departement depart, Connection cx) throws SQLException {
+        String rep = "UPDATE Departement SET intitule = ?, enseignant = ? WHERE iddep = ?";
+        try (PreparedStatement stmt = cx.prepareStatement(rep)) {
+            stmt.setString(1, depart.getIntitulé());
+            stmt.setInt(2, depart.getId());
+            stmt.setInt(3, depart.getResponsable().getId());
+            stmt.executeUpdate();
+            System.out.println("Département modifié avec succès");
+        }
+    }
+
+    public static void updateEnseignant(Enseignant enseignant, Connection cx) throws SQLException {
+        String rep1 = "UPDATE Enseignant SET nom = ?, prenom = ?, email = ?, grade = ? WHERE idens = ?";
+        try (PreparedStatement stmt = cx.prepareStatement(rep1)) {
+            stmt.setString(1, enseignant.getNom());
+            stmt.setString(2, enseignant.getPrénom());
+            stmt.setString(3, enseignant.getEmail());
+            stmt.setString(4, enseignant.getGrade());
+            stmt.setInt(5, enseignant.getId());
+            stmt.executeUpdate();
+            System.out.println("Enseignant modifié avec succès");
+        }
     }
 }
+
+
+
 
 
 

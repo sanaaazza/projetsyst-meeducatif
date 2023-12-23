@@ -22,16 +22,13 @@ public class Enseignant {
      }
 
     public Enseignant(int idens, String nom, String prenom, String email, String grade) {
+
         this.nom=nom;
         this.prénom=prenom;
         this.email=email;
         this.grade=grade;
     }
 
-
-
-    public Enseignant(int idEs){
-    }
 
 
     public static ArrayList<Enseignant> getEnseignant() {

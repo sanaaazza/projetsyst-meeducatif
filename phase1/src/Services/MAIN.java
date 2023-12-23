@@ -64,24 +64,28 @@ public class MAIN {
 
         public static void main(String[] args) {
 
-            Departement departement=new Departement();
-            departement.setId(Database.getId_DP());
-            departement.setIntitulé("departement informatique");
-            departement.setResponsable(new Enseignant(2,"dachri","wafaa","wafaadachri20@gmail.com","chef"));
-            Database.departement.add(departement);
-            Enseignant enseignant=new Enseignant();
-            enseignant.setId(Database.getId_ES());
-            enseignant.setNom("Ali");
+
+            Enseignant enseignant = new Enseignant();
+            enseignant.setNom("ali");
             enseignant.setPrénom("benani");
-            enseignant.setEmail("alibenani20@gmail.com");
-            enseignant.setGrade("prof");
+            enseignant.setEmail("alibnh@gmail.com");
+            enseignant.setGrade("Resp");
+            enseignant.setId(Database.getId_ES());
             Database.enseignant.add(enseignant);
 
-              /* Departement dep=new Departement();
-            dep.setId(Database.getId_DP());
-            dep.setIntitulé("departement mecanique");
-            dep.setResponsable(new Enseignant(2,"tahiri","liela","wafaadachri20@gmail.com","prof"));
-            Database.departement.add(dep);*/
+            Enseignant enseignant1 = new Enseignant();
+            enseignant1.setNom("ait said");
+            enseignant1.setPrénom("Mehdi");
+            enseignant1.setEmail("Mehdi.Aitsait@gmail.com");
+            enseignant1.setGrade("Prof");
+            enseignant1.setId(Database.getId_ES());
+            Database.enseignant.add(enseignant1);
+
+            Departement departement = new Departement();
+            departement.setResponsable(enseignant);
+            departement.setIntitulé("lst SITD");
+            departement.setId(Database.getId_DP());
+            Database.departement.add(departement);
             showMenu();
         }
     }

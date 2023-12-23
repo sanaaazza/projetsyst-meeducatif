@@ -1,39 +1,39 @@
 package Modules;
 
-import java.sql.Connection;
 import java.util.ArrayList;
 
-public class Departement { private static String intitulé;
-    private static Enseignant responsable;
-    private ArrayList<Filiere> filieres = new ArrayList<Filiere>();
-     private int id;
-    public Departement(String intitulé, Enseignant responsable){
-        this.intitulé=intitulé;
-        this.responsable=responsable;
+public class Departement {
+    public static ArrayList<Departement> departements = new ArrayList<>();
+    private String intitulé;
+    private Enseignant responsable;
+    private ArrayList<Filiere> filieres = new ArrayList<>();
+    private int id;
 
+
+
+    public ArrayList<Departement> getDepartements() {
+        return departements;
+    }
+
+    public void setDepartements(ArrayList<Departement> departements) {
+        this.departements = departements;
     }
 
     public Departement() {
     }
 
-    public Departement(int id, String intitulé, String enseignant) {
-        this.id=id;
-        this.intitulé=intitulé;
-        this.responsable=responsable;
+    public Departement(int id, String intitulé, Enseignant ensei) {
+        this.id = id;
+        this.intitulé = intitulé;
+        this.responsable = ensei;
     }
-
-
-
-    public Departement(int id, String gegm, Enseignant enseignant) {
-    }
-
 
     public String getIntitulé() {
-        return this.intitulé;
+        return intitulé;
     }
 
     public Enseignant getResponsable() {
-        return this.responsable;
+        return responsable;
     }
 
     public void setResponsable(Enseignant responsable) {
@@ -62,11 +62,9 @@ public class Departement { private static String intitulé;
 
     public String toString() {
         return "Département{" +
-                "id = " + id + '\''+
-                "intitulé='" + intitulé + '\'' +
+                "id='" + id + '\'' +
+                ", intitulé='" + intitulé + '\'' +
                 ", responsable=" + responsable.getId() +
-
                 '}';
     }
-
 }
